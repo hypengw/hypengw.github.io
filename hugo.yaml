@@ -1,0 +1,4 @@
+baseURL: https://hypengw.github.io/
+languageCode: en-us
+title: hypengw
+theme: ["PaperMod"]
