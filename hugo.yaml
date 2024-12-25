@@ -1,4 +1,48 @@
-baseURL: https://hypengw.github.io/
+baseURL: https://blog.bluempty.com
 languageCode: en-us
 title: hypengw
 theme: ["PaperMod"]
+
+enableRobotsTXT: true
+minify:
+  disableXML: true
+  minifyOutput: true
+
+params:
+  env: production
+  keywords: [Blog]
+  author: hypengw
+  # disableThemeToggle: true
+  ShowShareButtons: true
+  ShowReadingTime: true
+  # disableSpecial1stPost: true
+  displayFullLangName: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowRssButtonInSectionTermList: true
+  ShowAllPagesInArchive: true
+  ShowPageNums: true
+  ShowToc: true
+  # comments: false
+  #images: ["images/papermod-cover.png"]
+  
+  homeInfoParams:
+    Title: "Blog"
+    Content: ''
+
+  socialIcons:
+    - name: github
+      title: View Source on Github
+      url: "https://github.com/hypengw/blog"
+
+# Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
+pygmentsUseClasses: true
+markup:
+  highlight:
+    noClasses: false
+    # anchorLineNos: true
+    # codeFences: true
+    # guessSyntax: true
+    # lineNos: true
+    # style: monokai
