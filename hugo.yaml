@@ -1,5 +1,5 @@
 baseURL: https://blog.bluempty.com
-title: hypengw
+title:  Home 
 theme: 'PaperMod'
 
 languageCode: zh-cn
@@ -39,7 +39,7 @@ params:
   keywords: ['blog', 'page']
   author: hypengw
   # disableThemeToggle: true
-  ShowShareButtons: true
+  ShowShareButtons: false
   ShowReadingTime: true
   # disableSpecial1stPost: true
   displayFullLangName: true
@@ -50,6 +50,7 @@ params:
   ShowAllPagesInArchive: true
   ShowPageNums: true
   ShowToc: true
+  tocopen: true
   # comments: false
   #images: ["images/papermod-cover.png"]
   
