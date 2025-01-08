@@ -110,11 +110,11 @@ include /run/flatpak/ld.so.conf.d/runtime-*.conf
 
 可以发现这其实就等效于一个遵循 **FHS** 的最小化发行版。
 
-- `/app`
+- `/app`  
   作为每个软件的 Prefix，编译打包中，只有这个目录是可写的。
-- `/app/lib`
+- `/app/lib`  
   软件放置 Bundle library 的地方
-- `/app/bin`
+- `/app/bin`  
   默认在容器的 PATH 环境变量里，需要把软件的启动程序安装/链接到这里
 
 #### host share
@@ -151,15 +151,54 @@ include /run/flatpak/ld.so.conf.d/runtime-*.conf
 </fontconfig>
 ```
 
-- `/run/host/share/icons`
+- `/run/host/share/icons ` 
   对应 `/usr/share/icons`
 
-- `/run/host/user-share/icons`
+- `/run/host/user-share/icons`  
   对应 `${XDG_DATA_HOME}/icons`
 
-- `/run/host/fonts`
+- `/run/host/fonts`  
   对应 `/usr/share/fonts`
 
-- `/run/host/user-fonts`
+- `/run/host/user-fonts`  
   对应 `${XDG_DATA_HOME}/fonts`
+
+### 全局权限
+
+flatpak 可以给所有应用预制统一的权限。  
+这一点还挺好用的，比如我有一个文件夹，不能让任何应用看到，哪怕有 `host` 权限。
+
+```bash
+$ flatpak override --user --filesystem='xdg-config/fontconfig:ro'
+$ cat ~/.local/share/flatpak/overrides/global
+[Context]
+filesystems=xdg-config/gtk-3.0:ro;!xdg-run/keyring;/nix:ro;xdg-config/fontconfig:ro;
+
+[Session Bus Policy]
+com.canonical.AppMenu.Registrar=talk
+
+[Environment]
+MOZ_ENABLE_WAYLAND=1
+```
+
+#### 优先级
+
+应用自己的权限配置是第一优先，而后是全局的。  
+不过 `filesystem` 权限不太一样，它自身就有优先级，比如 `host/home` 比一般的路径优先级要低。大致是先满足了 `filesystem` 自己的优先级再来论其他的。
+
+### system-wide and per-user
+
+类似 Win 的把应用 安装到所有用户 和 只为我安装。  
+注意这两边是完全独立开来的，都用的话，需要两份 `runtime`  
+我是推荐用 `per-user`，如果是家里共享的电脑，推荐 `system-wide`
+
+#### system-wide
+
+安装位置：`/var/lib/flatpak/`  
+需要权限来执行命令，发行版基本都有安装 [polkit rule](https://github.com/flatpak/flatpak/blob/1.15.91/system-helper/org.freedesktop.Flatpak.rules.in)，当然你也可以用 `sudo`
+
+#### per-user
+
+安装位置：`$HOME/.local/share/flatpak/`  
+需要使用 `--user` flag ，加在命令后面
 
