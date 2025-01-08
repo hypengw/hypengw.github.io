@@ -2,7 +2,8 @@
 title = 'Flatpak 是包管理吗'
 date = 2025-01-03T21:25:18+08:00
 draft = false
-tags = ['Linux']
+tags = ['科技','Linux']
+
 +++
 
 > 阅读本篇文章需要有所了解：`Linux 发行版`, `Linux 桌面环境(Desktop Envrionment)`, `包管理(Package Manager)`
@@ -151,7 +152,7 @@ include /run/flatpak/ld.so.conf.d/runtime-*.conf
 </fontconfig>
 ```
 
-- `/run/host/share/icons ` 
+- `/run/host/share/icons `   
   对应 `/usr/share/icons`
 
 - `/run/host/user-share/icons`  
