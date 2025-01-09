@@ -85,7 +85,7 @@ params:
   ShowToc: true
   tocopen: true
   comments: false
-  images: ['images/profile.webp']
+  #images: ['images/profile.webp']
   assets:
     favicon: 'images/profile.webp'
     favicon16x16: 'images/profile.webp'
