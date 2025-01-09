@@ -1,16 +1,17 @@
 baseURL: https://blog.bluempty.com
 title: Bluempty
-theme: 'PaperMod'
+#theme: ['PaperMod']
 
 languageCode: zh-hans
-defaultContentLanguage: zh-hans
+defaultContentLanguage: zh
 hasCJKLanguage: true
 enableInlineShortcodes: true
 enableRobotsTXT: true
 enableEmoji: true
 
 languages:
-  zh-hans:
+  zh:
+    languageCode: zh-hans
     languageName: 'Zh'
     weight: 1
     menu:
@@ -37,6 +38,7 @@ languages:
         Content: ''
 
   en:
+    languageCode: en-us
     languageName: 'En'
     weight: 2
     menu:
