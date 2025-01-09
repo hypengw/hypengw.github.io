@@ -6,7 +6,7 @@ draft = false
 +++
 
 博主有一台 Pixel 5  
-尝试用 Lineageos 作为主力机后放弃，以下面临的一些问题
+尝试用 Lineageos 作为主力机后放弃，以下是面临的一些问题
 
 ## 无法人脸认证
 
@@ -18,8 +18,9 @@ https://www.v2ex.com/t/1068160
 
 - 铁路 12306 
   {{<figure src="assets/12306.webp" width="50%">}}
-  
 - 钉钉
+- 美团
+  请求异常拒绝操作
 
 ## 政府/银行类 app 闪退
 
