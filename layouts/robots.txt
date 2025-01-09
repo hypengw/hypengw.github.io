@@ -1,7 +1,9 @@
 User-agent: *
 Allow: /post/
+Allow: /en/post/
 Allow: /assets/
 Allow: /*.html
 Allow: /*.xml
 Allow: /*.json
+Allow: /*/sitemap.xml
 Sitemap: {{ .Site.BaseURL }}/sitemap.xml
