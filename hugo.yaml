@@ -24,9 +24,12 @@ languages:
         - name: 搜索
           url: /search/
           weight: 30
+        - name: 友链
+          url: /friends/
+          weight: 40
         - name: 关于
           url: '/about/'
-          weight: 40
+          weight: 50
 
     params:
       homeInfoParams:
@@ -47,9 +50,12 @@ languages:
         - name: Search
           url: /search/
           weight: 30
+        - name: Friends
+          url: /friends/
+          weight: 40
         - name: 'About'
           url: '/about/'
-          weight: 40
+          weight: 50
 
     params:
       homeInfoParams:
