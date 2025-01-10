@@ -9,3 +9,4 @@ excludeFromRss: true
 | Name | Blog |
 | :--- | :--- |
 | Integral | [Integral's Blog](https://blog.i7.homes) |
+| poly000 | [poly000客栈](https://mokurin000.github.io) |
