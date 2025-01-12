@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>科技 on Bluempty</title>
+    <link>https://blog.bluempty.com/tags/%E7%A7%91%E6%8A%80/</link>
+    <description>Recent content in 科技 on Bluempty</description>
+    <generator>Hugo -- 0.135.0</generator>
+    <language>zh-hans</language>
+    <lastBuildDate>Fri, 03 Jan 2025 21:25:18 +0800</lastBuildDate>
+    <atom:link href="https://blog.bluempty.com/tags/%E7%A7%91%E6%8A%80/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Flatpak 是包管理吗</title>
+      <link>https://blog.bluempty.com/post/is-flatpak-package-manager/</link>
+      <pubDate>Fri, 03 Jan 2025 21:25:18 +0800</pubDate>
+      <guid>https://blog.bluempty.com/post/is-flatpak-package-manager/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;阅读本篇文章需要有所了解：&lt;code&gt;Linux 发行版&lt;/code&gt;, &lt;code&gt;Linux 桌面环境(Desktop Envrionment)&lt;/code&gt;, &lt;code&gt;包管理(Package Manager)&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;博主第一次接触 Linux 是在高中，当时似乎是有个软件只有 Linux 版本，然后就参照着网上的文章试着安装 arch，具体的细节已经不太记得了。
+对当时的我来说，一堆不明所以的命令挺头疼的，一直害怕把电脑搞坏。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

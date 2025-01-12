@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Posts on Bluempty</title>
+    <link>https://blog.bluempty.com/post/</link>
+    <description>Recent content in Posts on Bluempty</description>
+    <generator>Hugo -- 0.135.0</generator>
+    <language>zh-hans</language>
+    <lastBuildDate>Thu, 09 Jan 2025 14:15:27 +0800</lastBuildDate>
+    <atom:link href="https://blog.bluempty.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>国内使用 Lineageos 的问题</title>
+      <link>https://blog.bluempty.com/post/lineageos-china/</link>
+      <pubDate>Thu, 09 Jan 2025 14:15:27 +0800</pubDate>
+      <guid>https://blog.bluempty.com/post/lineageos-china/</guid>
+      <description>&lt;p&gt;博主有一台 Pixel 5&lt;br&gt;
+尝试用 Lineageos 作为主力机后放弃，以下是面临的一些问题&lt;/p&gt;
+&lt;h2 id=&#34;无法人脸认证&#34;&gt;无法人脸认证&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://x.com/abaabaMoGu/status/1759564528424284524?lang=ar&#34;&gt;https://x.com/abaabaMoGu/status/1759564528424284524?lang=ar&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.v2ex.com/t/1068160&#34;&gt;https://www.v2ex.com/t/1068160&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;推测是 lineageos 被列入了黑名单&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;铁路 12306&lt;br&gt;
+&lt;figure&gt;
+      &lt;img loading=&#34;lazy&#34; src=&#34;assets/12306.webp&#34; width=&#34;50%&#34;/&gt; 
+  &lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;钉钉&lt;/li&gt;
+&lt;li&gt;美团&lt;br&gt;
+请求异常拒绝操作&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;政府银行类-app-闪退&#34;&gt;政府/银行类 app 闪退&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://v2ex.com/t/1041752&#34;&gt;https://v2ex.com/t/1041752&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Android 14 qpr2 的&lt;a href=&#34;https://github.com/crdroidandroid/android_art/commit/f6d02cf544f1bdb8cb0ae90603fbcc2b9f5b3c47&#34;&gt;修改&lt;/a&gt;，导致包括国内大部分上了梆梆企业加固的 app 崩溃&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Intel B580 显卡使用体验</title>
+      <link>https://blog.bluempty.com/post/b580/</link>
+      <pubDate>Tue, 07 Jan 2025 00:44:03 +0800</pubDate>
+      <guid>https://blog.bluempty.com/post/b580/</guid>
+      <description>&lt;h2 id=&#34;基本配置&#34;&gt;基本配置&lt;/h2&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Specifications&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Xe-cores&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;20&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Graphics Clock&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;2670 MHz&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Memory&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;12 GB GDDR6&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Graphics Memory Interface&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;192 bit&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Graphics Memory Bandwidth&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;456 GB/s&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;GPU Peak TOPS (Int8)&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;233&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;TBP&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;190 W&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;系统环境&#34;&gt;系统环境&lt;/h2&gt;
+&lt;p&gt;kernal: 6.12.7&lt;br&gt;
+mesa: 24.3.2&lt;br&gt;
+os: fedora 41&lt;br&gt;
+egpu: m2 to oculink&lt;/p&gt;
+&lt;h3 id=&#34;pcie-gen-1x1&#34;&gt;PCIe Gen 1x1&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;lspci&lt;/code&gt; 对于 Intel Arc 显卡总是显示 PCIe 1x1 的速度&lt;br&gt;
+这似乎是预期行为，并不是实际的速度，&lt;a href=&#34;https://www.intel.com/content/www/us/en/support/articles/000094587/graphics.html&#34;&gt;Troubleshooting&lt;/a&gt;， &lt;a href=&#34;https://community.intel.com/t5/Graphics/Intel-Arc-A770-PCIe-Speed-2-5GT-s-Width-x1/td-p/1455448&#34;&gt;Intel Support Forums&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Flatpak 是包管理吗</title>
+      <link>https://blog.bluempty.com/post/is-flatpak-package-manager/</link>
+      <pubDate>Fri, 03 Jan 2025 21:25:18 +0800</pubDate>
+      <guid>https://blog.bluempty.com/post/is-flatpak-package-manager/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;阅读本篇文章需要有所了解：&lt;code&gt;Linux 发行版&lt;/code&gt;, &lt;code&gt;Linux 桌面环境(Desktop Envrionment)&lt;/code&gt;, &lt;code&gt;包管理(Package Manager)&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;博主第一次接触 Linux 是在高中，当时似乎是有个软件只有 Linux 版本，然后就参照着网上的文章试着安装 arch，具体的细节已经不太记得了。
+对当时的我来说，一堆不明所以的命令挺头疼的，一直害怕把电脑搞坏。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
