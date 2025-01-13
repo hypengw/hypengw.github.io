@@ -4,6 +4,8 @@ hidemeta: true
 showToc: false
 searchHidden: true
 excludeFromRss: true
+sitemap:
+  disable: true
 ---
 
 | 名字 | 博客 |

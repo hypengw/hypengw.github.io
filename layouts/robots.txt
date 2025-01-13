@@ -1,9 +1,12 @@
 User-agent: *
-Allow: /post/
-Allow: /en/post/
-Allow: /assets/
-Allow: /*.html
-Allow: /*.xml
-Allow: /*.json
-Allow: /*/sitemap.xml
+Disallow: /about/
+Disallow: /tags/
+Disallow: /categories/
+Disallow: /friends/
+Disallow: /search/
+Disallow: /en/about/
+Disallow: /en/tags/
+Disallow: /en/friends/
+Disallow: /en/categories/
+Disallow: /en/search/
 Sitemap: {{ .Site.BaseURL }}/sitemap.xml
