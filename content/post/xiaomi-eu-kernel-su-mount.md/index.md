@@ -11,9 +11,10 @@ Debug 了一下下。
 
 ### KernelSU 卸载模块实现
 
-kernel 内部使用 [path_umount](https://github.com/tiann/KernelSU/blob/v1.0.2/kernel/core_hook.c#L451) 单独给某个 app 卸载模块 overlay 挂载点
+kernel 内部使用 [path_umount](https://elixir.bootlin.com/linux/v5.15.31/C/ident/path_umount) 单独给某个 app 卸载模块 overlay 挂载点
 
 ```c
+# https://github.com/tiann/KernelSU/blob/v1.0.2/kernel/core_hook.c#L451
 static void ksu_umount_mnt(struct path *path, int flags)
 {
 	int err = path_umount(path, flags);
@@ -133,6 +134,7 @@ init 额外的 overlay
 而且这些分区基本都是 `erofs(readonly fs)`，想单独改某个分区还挺麻烦的。
 
 看了下 [KernelSU Model guide](https://kernelsu.org/guide/module.html)，发现刚好有在 fs 完成后的脚本执行点（post-fs-data.sh）。  
+那可以全局 umount，来回退 fstab 的挂载(`eu` 版本，这些挂载没有用处)  
 以下是脚本：[模块下载](assets/xiaomi.eu.no.mi_ext-1.0.zip)
 
 ```bash
