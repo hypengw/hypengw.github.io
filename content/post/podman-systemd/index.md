@@ -11,7 +11,7 @@ draft = false
 ## daemonless
 
 如题，podman 不需要跑一个 daemon 来管理容器。  
-具体实现的话，大概是底层的 oci runtime 会在 XDG_RUNTIME_DIR 给每个容器一个独立的文件夹来存放一些状态信息，可以被 podman cli 读取和管理。
+具体实现的话，大概是底层的 [oci runtime](https://github.com/opencontainers/runtime-spec) 会在 `XDG_RUNTIME_DIR` 给每个容器一个独立的文件夹来存放一些状态信息，可以被 podman cli 读取和管理。
 
 ### socket
 
@@ -24,6 +24,18 @@ podman 仍然提供了通过 socket 来管理的功能，这个 socket 需要单
 ## rootless
 
 与其把“权力”关进笼子里，不如一开始就分离需要“权力”的部分。  
+普通用户使用 podman 默认就是 `rootless`。
+
+配置文件: `~/.config/containers`  
+容器存储: `~/.local/share/containers`  
+
+### storage driver
+
+- overlay(default)
+  需要安装 `fuse-overlayfs`
+- btrfs
+  推荐在 fstab 添加 `user_subvol_rm_allowed` 挂载选项，[来源](https://github.com/containers/storage/pull/508)。
+- zfs...
 
 ### [pasta](https://passt.top/passt/about/) User-Mode Networking 
 
@@ -37,8 +49,8 @@ podman 仍然提供了通过 socket 来管理的功能，这个 socket 需要单
 
 #### host.containers.internal
 
-通过 `/etc/hosts` 设置，在使用 pasta 的情况下是指向 `169.254.1.2` 的特殊地址，指向本机，通常用于访问其他容器暴露的端口或者 host 的服务。
-但是无法访问监听 `localhost` 回环地址的服务，需要监听 `0.0.0.0`
+通过 `/etc/hosts` 设置，在使用 pasta 的情况下是指向 `169.254.1.2` 的特殊地址，指向本机，通常用于访问其他容器暴露的端口或者 host 的服务。  
+但是无法访问监听 `localhost` 回环地址的服务，需要监听 `0.0.0.0`。
 
 #### 性能测试
 
@@ -84,7 +96,7 @@ podman 是支持 pod 的，不过没有 k8s 的许多企业化功能。
 ### [kube](https://docs.podman.io/en/stable/markdown/podman-kube-play.1.html)
 
 podman 支持用 Kubernetes YAML 来定义 pod。  
-同时自己的 metadata 和 volume 写法，具体可以阅读文档。  
+同时有自己的 metadata 和 volume 写法，具体可以阅读文档。  
 博主个人是习惯把需要多个容器的服务用 pod 来写。  
 
 这里给一个 yaml example:  
@@ -104,7 +116,7 @@ spec:
 ## [systemd unit](https://docs.podman.io/en/latest/markdown/podman-systemd.unit.5.html)
 
 systemd units using Podman Quadlet  
-Quadlet 现在是 [systemd generator](https://www.freedesktop.org/software/systemd/man/latest/systemd.generator.html)。
+Quadlet 现在是 [systemd generator](https://www.freedesktop.org/software/systemd/man/latest/systemd.generator.html)。  
 这是我最看重的功能，通过 systemd 来管理 podman container。  
 
 扫描的位置：  
