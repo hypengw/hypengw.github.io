@@ -94,6 +94,7 @@ params:
   tocopen: true
   comments: false
   #images: ['images/profile.webp']
+  taxonomiesExcludedFromSitemap: ['tags', 'categories']
   assets:
     favicon: 'images/profile.webp'
     favicon16x16: 'images/profile.webp'
