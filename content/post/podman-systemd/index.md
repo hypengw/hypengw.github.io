@@ -31,11 +31,11 @@ podman 仍然提供了通过 socket 来管理的功能，这个 socket 需要单
 
 ### storage driver
 
-- overlay(default)
+- overlay(default)  
   需要安装 `fuse-overlayfs`
-- btrfs
+- btrfs  
   推荐在 fstab 添加 `user_subvol_rm_allowed` 挂载选项，[来源](https://github.com/containers/storage/pull/508)。
-- zfs...
+- zfs...  
 
 ### [pasta](https://passt.top/passt/about/) User-Mode Networking 
 
