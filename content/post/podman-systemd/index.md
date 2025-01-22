@@ -2,6 +2,7 @@
 title = 'podman 使用体验'
 date = 2025-01-19T10:43:33+08:00
 draft = false
+tags = ['科技','Linux']
 
 +++
 

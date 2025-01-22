@@ -2,6 +2,7 @@
 title = 'HyperOS.eu KernelSU 卸载模块不工作'
 date = 2025-01-18T12:55:59+08:00
 draft = false
+tags = ['科技','手机']
 
 +++
 
@@ -42,7 +43,7 @@ int ksu_handle_setuid(struct cred *new, const struct cred *old)
 
 ### HyperOS 会使用 overlay 挂载 mi_ext
 
-`mi_ext` 时候是小米用来添加一些额外 app 和 配置文件的  
+`mi_ext` 分区是小米用来添加一些额外 app 和 配置文件的  
 `eu` 版本这个分区除了 `etc`，其他都是空文件夹
 
 ```bash

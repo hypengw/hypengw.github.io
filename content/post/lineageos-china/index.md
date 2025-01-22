@@ -2,6 +2,7 @@
 title = '国内使用 Lineageos 的问题'
 date = 2025-01-09T14:15:27+08:00
 draft = false
+tags = ['科技','手机']
 
 +++
 
