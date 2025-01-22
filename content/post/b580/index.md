@@ -83,7 +83,15 @@ TODO
 
 ## 游戏
 
-TODO
+### mc
+
+平均帧: 300  
+
+- mc 1.21.4 1080p
+- Iris + Sodium(默认配置)
+- BSL shader 8.4
+
+![mc](assets/mc.webp)
 
 ## 性能测试
 

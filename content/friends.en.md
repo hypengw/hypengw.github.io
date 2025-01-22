@@ -3,9 +3,9 @@ title: Friends
 hidemeta: true
 showToc: false
 searchHidden: true
-excludeFromRss: true
 sitemap:
   disable: true
+excludeFromRss: true
 ---
 
 | Name | Blog |

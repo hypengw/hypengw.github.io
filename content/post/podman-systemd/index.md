@@ -88,7 +88,7 @@ $ cat /etc/subuid
 
 podman 是支持 pod 的，不过没有 k8s 的许多企业化功能。
 
-{{<figure src="assets/pod.svg">}}
+![pod](assets/pod.svg)
 
 - 共享网络子空间
 - 共享硬件资源

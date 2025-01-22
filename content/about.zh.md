@@ -2,6 +2,8 @@
 title: '关于'
 sitemap:
   disable: true
+excludeFromRss: true
+searchHidden: true
 ---
 
 这里是 hypengw 的博客。

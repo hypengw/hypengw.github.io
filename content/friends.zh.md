@@ -3,9 +3,9 @@ title: 友链
 hidemeta: true
 showToc: false
 searchHidden: true
-excludeFromRss: true
 sitemap:
   disable: true
+excludeFromRss: true
 ---
 
 | 名字 | 博客 |

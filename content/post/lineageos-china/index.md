@@ -18,7 +18,7 @@ https://www.v2ex.com/t/1068160
 推测是 lineageos 被列入了黑名单
 
 - 铁路 12306  
-  {{<figure src="assets/12306.webp" width="50%">}}
+  ![12306](assets/12306.webp?width=60)
 - 钉钉
 - 美团  
   请求异常拒绝操作
