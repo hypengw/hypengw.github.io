@@ -190,5 +190,5 @@ mount --bind -o ro $BINDDIR /mi_ext/vendor
 ### Changelog
 
 - 1.1
-  remove `/vendor/etc/camera` `and`/vendor/lib/rfsa/adsp` which are used by camera and not part of mi_ext.   
+  remove `/vendor/etc/camera` and`/vendor/lib/rfsa/adsp` which are used by camera and not part of mi_ext.   
   add `update.json`
