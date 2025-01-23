@@ -143,7 +143,12 @@ init 额外的 overlay
 
 MODDIR=${0%/*}
 BINDDIR=/tmp/mi_ext
-LOGFILE=$BINDDIR/mi_ext.log
+
+mkdir -p $BINDDIR
+
+# log
+exec 2>$BINDDIR/debug.log
+set -x
 
 PATHES="
 /product/overlay
@@ -165,18 +170,13 @@ PATHES="
 /product/etc/precust_theme
 /product/etc/preferred-apps
 /product/etc/security
-/vendor/etc/camera
-/vendor/lib/rfsa/adsp
 "
 
-mkdir -p $BINDDIR
-echo '' > $LOGFILE
-
-umount -lvf -t overlay /product/bin >> $LOGFILE 2>&1
-umount -lvf -t overlay /product/lib64 >> $LOGFILE 2>&1
+umount -lvf -t overlay /product/bin
+umount -lvf -t overlay /product/lib64
 
 for p in $PATHES; do
-    umount -v -t overlay $p >> $LOGFILE 2>&1
+    umount -v -t overlay $p
 done
 
 mount --bind -o ro $BINDDIR /mnt/vendor/mi_ext/system
@@ -187,3 +187,7 @@ mount --bind -o ro $BINDDIR /mnt/vendor/mi_ext/vendor
 mount --bind -o ro $BINDDIR /mi_ext/vendor
 ```
 
+### Changelog
+
+- 1.1
+  remove `/vendor/etc/camera` `and`/vendor/lib/rfsa/adsp` which are used by camera and not part of mi_ext.   
