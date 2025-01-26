@@ -85,13 +85,19 @@ TODO
 
 ### mc
 
-平均帧: 300  
+平均帧: 280  
 
 - mc 1.21.4 1080p
 - Iris + Sodium(默认配置)
-- BSL shader 8.4
+- BSL shader 8.4 High
 
 ![mc](assets/mc.webp)
+
+## 编/解码
+
+需要 24.4.4 及以上的 [intel media-driver](https://github.com/intel/media-driver.git)。  
+
+TODO
 
 ## 性能测试
 

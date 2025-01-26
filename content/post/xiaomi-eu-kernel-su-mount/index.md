@@ -134,7 +134,7 @@ init 额外的 overlay
 原本想的是直接修改 fstab 了事，但是发现 android 10 新加了 super 动态分区，把 `system/vender/...` 分段在一个分区里，类似套娃。  
 而且这些分区基本都是 `erofs(readonly fs)`，想单独改某个分区还挺麻烦的。
 
-看了下 [KernelSU Model guide](https://kernelsu.org/guide/module.html)，发现刚好有在 fs 完成后的脚本执行点（post-fs-data.sh）。  
+看了下 [KernelSU Module guide](https://kernelsu.org/guide/module.html)，发现刚好有在 fs 完成后的脚本执行点（post-fs-data.sh）。  
 那可以全局 umount，来回退 fstab 的挂载(`eu` 版本，这些挂载没有用处)  
 以下是脚本：[模块下载](assets/xiaomi.eu.no.mi_ext-1.1.zip)
 
@@ -189,6 +189,6 @@ mount --bind -o ro $BINDDIR /mi_ext/vendor
 
 ### Changelog
 
-- 1.1
+- 1.1  
   remove `/vendor/etc/camera` and`/vendor/lib/rfsa/adsp` which are used by camera and not part of mi_ext.   
   add `update.json`
