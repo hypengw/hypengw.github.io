@@ -12,3 +12,4 @@ excludeFromRss: true
 | :--- | :--- |
 | Integral | [Integral's Blog](https://blog.i7.homes) |
 | poly000 | [poly000客栈](https://mokurin000.github.io) |
+| 依云 | [依云's Blog](https://blog.lilydjwg.me/) |
