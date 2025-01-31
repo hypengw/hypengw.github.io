@@ -29,8 +29,8 @@ tags = ['硬件', 'Linux']
 
 ## 系统环境
 
-kernal: 6.12.7  
-mesa: 24.3.2  
+kernal: 6.12.11  
+mesa: 24.3.4  
 os: fedora 41  
 egpu: m2 to oculink
 
@@ -85,13 +85,25 @@ TODO
 
 ### mc
 
-平均帧: 280  
+平均FPS: 280  
 
 - mc 1.21.4 1080p
 - Iris + Sodium(默认配置)
 - BSL shader 8.4 High
 
 ![mc](assets/mc.webp)
+
+#### 赛博朋克 2077
+
+需要 24.3.4 及以上的 mesa，不然会有 shader 渲染错误
+光追似乎不工作
+
+1080p 最高画质
+平均FPS: 68
+最低FPS: 56
+最高FPS: 82
+
+![2077](assets/2077.webp)
 
 ## 编/解码
 
