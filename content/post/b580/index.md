@@ -91,19 +91,19 @@ TODO
 - Iris + Sodium(默认配置)
 - BSL shader 8.4 High
 
-![mc](assets/mc.webp)
+![mc](https://alist.bluempty.com/d/Public/Blog/b580/mc.webp)
 
-#### 赛博朋克 2077
+### 赛博朋克 2077
 
-需要 24.3.4 及以上的 mesa，不然会有 shader 渲染错误
+需要 24.3.4 及以上的 mesa，不然会有 shader 渲染错误  
 光追似乎不工作
 
-1080p 最高画质
-平均FPS: 68
-最低FPS: 56
+1080p 最高画质  
+平均FPS: 68  
+最低FPS: 56  
 最高FPS: 82
 
-![2077](assets/2077.webp)
+![2077](https://alist.bluempty.com/d/Public/Blog/b580/2077.webp)
 
 ## 编/解码
 
