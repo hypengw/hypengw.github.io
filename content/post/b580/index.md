@@ -109,7 +109,20 @@ TODO
 
 需要 24.4.4 及以上的 [intel media-driver](https://github.com/intel/media-driver.git)。  
 
-TODO
+### 解码
+
+4k 120fps av1/hevc main/main10 [mmd](https://steamcommunity.com/sharedfiles/filedetails/?l=schinese&id=2156267111)： **5路**
+
+![2077](https://alist.bluempty.com/d/Public/Blog/b580/decoder.webp)
+
+### 编码
+
+hevc main10 QVBR: **speed=1.37x**  
+av1 也差不多这个速度，不过 `av1_vaapi` driver 只支持 CQP, CBR, VBR, ICQ。
+
+```bash
+ffmpeg -hwaccel vaapi -hwaccel_output_format vaapi -i input.mp4 -vf 'scale_vaapi=format=p010' -c:v hevc_vaapi -profile:v main10 -tier high -rc_mode QVBR -qp 12 -b:v 40M output3.mp4
+```
 
 ## 性能测试
 
