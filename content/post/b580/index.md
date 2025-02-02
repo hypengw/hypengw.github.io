@@ -105,7 +105,7 @@ TODO
 
 ![2077](https://alist.bluempty.com/d/Public/Blog/b580/2077.webp)
 
-## 编/解码
+## 媒体
 
 需要 24.4.4 及以上的 [intel media-driver](https://github.com/intel/media-driver.git)。  
 
