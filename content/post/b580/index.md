@@ -111,14 +111,26 @@ TODO
 
 ### 解码
 
-4k 120fps av1/hevc main/main10 [mmd](https://steamcommunity.com/sharedfiles/filedetails/?l=schinese&id=2156267111)： **5路**
+2160p 120fps hevc/av1 main10 [mmd](https://steamcommunity.com/sharedfiles/filedetails/?l=schinese&id=2156267111):  **5路**  
 
-![2077](https://alist.bluempty.com/d/Public/Blog/b580/decoder.webp)
+![初音 - 拼湊的斷音](https://alist.bluempty.com/d/Public/Blog/b580/decoder.webp)
+
+2160p(21:9) 120fps hevc main [mmd](https://www.bilibili.com/video/BV16m411Q7pa/): **4路**
+
+![世界第一的公主殿下](https://alist.bluempty.com/d/Public/Blog/b580/decoder_21_9.webp)
 
 ### 编码
 
-hevc main10 QVBR: **speed=1.37x**  
-av1 也差不多这个速度，不过 `av1_vaapi` driver 只支持 CQP, CBR, VBR, ICQ。
+原视频为上面测试解码的两个视频  
+
+| 分辨率      | 帧率 | 编码 | 编码配置          | 编码速率 |
+| :---------- | ---- | ---- | ----------------- | -------- |
+| 2160p(21:9) | 120  | hevc | main10,QVBR,qp:12 | 1.04x    |
+| 2160p       | 120  | hevc | main10,QVBR,qp:12 | 1.37x    |
+| 2160p       | 120  | av1  | main,VBR,crf:24   | 1.37x    |
+| 2160p(21:9) | 60   | hevc | main10,QVBR,qp:12 | 2.06x    |
+| 2160p       | 60   | hevc | main10,QVBR,qp:12 | 1.81x    |
+| 2160p       | 60   | av1  | main,VBR,crf:24   | 1.81x    |
 
 ```bash
 ffmpeg -hwaccel vaapi -hwaccel_output_format vaapi -i input.mp4 -vf 'scale_vaapi=format=p010' -c:v hevc_vaapi -profile:v main10 -tier high -rc_mode QVBR -qp 12 -b:v 40M output3.mp4
