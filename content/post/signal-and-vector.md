@@ -8,7 +8,8 @@ tags = ['数学']
 +++
 
 最近在看信号处理相关的书，看着看着，发现怎么看怎么像线性代数，于是记录下我能想到的对比。  
-不得不说，这种可以把知识连成网的体验真不错，学起来事半功倍。
+不得不说，这种可以把知识连成网的体验真不错，学起来事半功倍。  
+> 博主不是这个方向的研究生，如果有相关的书籍欢迎推荐给博主。
 
 ## 信号的向量表示
 
@@ -166,6 +167,14 @@ $$
 
 ### 特征向量(eigenvectors)
 
+A scalar $λ ∈ F$ is called an eigenvalue of $T ∈ L(V)$ if there exists a nonzero vector $u ∈ V$ such that $Tu = λu$.  
+Suppose $T ∈ L(V)$ and $λ ∈ F$ is an eigenvalue of $T$ . A vector $u ∈ V$ is called an eigenvector of $T$ (corresponding to $λ$) if $Tu = λu$.
+
 ### 复指数信号为特征函数的向量表示
+
+信号分析中最重要的基础，一个线性时不变系统对复指数信号的响应也同样是一个复指数信号。  
+即复指数是线性时不变系统的特征函数。
+
+
 
 ## TODO

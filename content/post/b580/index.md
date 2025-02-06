@@ -79,6 +79,12 @@ SYCL 版本需要安装 intel oneapi，然后在构建时挂载进容器
     | llama 7B Q4_0 | 3.56 GiB | 6.74 B | Vulkan  |   99 | pp512 | 175.56 ± 2.65 |
     | llama 7B Q4_0 | 3.56 GiB | 6.74 B | Vulkan  |   99 | tg128 |  44.12 ± 0.09 |
 
+### ollama
+
+ollama 官方没有给 SYCL 支持说明  
+但是它的后端是 llama.cpp, 改改就能运行了  
+[Dockerfile](https://github.com/hypengw/dockerfiles/tree/main/ollama)
+
 TODO
 
 ## 游戏
@@ -105,13 +111,26 @@ TODO
 
 ![2077](https://alist.bluempty.com/d/Public/Blog/b580/2077.webp)
 
+### 极限竞速地平线 4
+
+博主 4 还没玩完，并没有买 5  
+
+1080p 超高  
+平均FPS：136  
+最低FPS: 119  
+最高FPS: 166
+
+![极限竞速地平线4](https://alist.bluempty.com/d/Public/Blog/b580/forza_horizon_4.webp)
+
 ## 媒体
 
 需要 24.4.4 及以上的 [intel media-driver](https://github.com/intel/media-driver.git)。  
+[media features 文档](https://github.com/intel/media-driver/blob/master/docs/media_features.md)，b580 是 BMG
 
 ### 解码
 
-2160p 120fps hevc/av1 main10 [mmd](https://steamcommunity.com/sharedfiles/filedetails/?l=schinese&id=2156267111):  **5路**  
+2160p 120fps hevc main10 [mmd](https://steamcommunity.com/sharedfiles/filedetails/?l=schinese&id=2156267111):  **5路**  
+av1 main 和 hevc rext 422 也是5路
 
 ![初音 - 拼湊的斷音](https://alist.bluempty.com/d/Public/Blog/b580/decoder.webp)
 
@@ -123,14 +142,15 @@ TODO
 
 原视频为上面测试解码的两个视频  
 
-| 分辨率      | 帧率 | 编码 | 编码配置          | 编码速率 |
-| :---------- | ---- | ---- | ----------------- | -------- |
-| 2160p(21:9) | 120  | hevc | main10,QVBR,qp:12 | 1.04x    |
-| 2160p       | 120  | hevc | main10,QVBR,qp:12 | 1.37x    |
-| 2160p       | 120  | av1  | main,VBR,crf:24   | 1.37x    |
-| 2160p(21:9) | 60   | hevc | main10,QVBR,qp:12 | 2.06x    |
-| 2160p       | 60   | hevc | main10,QVBR,qp:12 | 1.81x    |
-| 2160p       | 60   | av1  | main,VBR,crf:24   | 1.81x    |
+| 分辨率      | 帧率 | 编码 | 格式      | 编码配置          | 编码速率 |
+| :---------- | ---- | ---- | --------- | ----------------- | -------- |
+| 2160p(21:9) | 120  | hevc | p010      | main10,QVBR,qp:12 | 1.04x    |
+| 2160p       | 120  | hevc | p010      | main10,QVBR,qp:12 | 1.37x    |
+| 2160p       | 120  | hevc | y210(422) | rext,QVBR,qp:12   | 1.32x    |
+| 2160p       | 120  | av1  | p010      | main,VBR,crf:24   | 1.37x    |
+| 2160p(21:9) | 60   | hevc | p010      | main10,QVBR,qp:12 | 2.06x    |
+| 2160p       | 60   | hevc | p010      | main10,QVBR,qp:12 | 1.81x    |
+| 2160p       | 60   | av1  | p010      | main,VBR,crf:24   | 1.81x    |
 
 ```bash
 ffmpeg -hwaccel vaapi -hwaccel_output_format vaapi -i input.mp4 -vf 'scale_vaapi=format=p010' -c:v hevc_vaapi -profile:v main10 -tier high -rc_mode QVBR -qp 12 -b:v 40M output3.mp4
@@ -151,7 +171,7 @@ ffmpeg -hwaccel vaapi -hwaccel_output_format vaapi -i input.mp4 -vf 'scale_vaapi
 
 `Single-precision compute` 和 4060 差不多  
 `Half-precision compute` 网站没有数据，看下面 `vkpeak`, 和 4070 super 差不多  
-`Integer compute` 差不多 4060 的一半1
+`Integer compute` 差不多 4060 的一半
 
 ```text
 $ ./clpeak 

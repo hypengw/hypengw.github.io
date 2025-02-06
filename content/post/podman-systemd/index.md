@@ -100,6 +100,14 @@ podman 支持用 Kubernetes YAML 来定义 pod。
 同时有自己的 metadata 和 volume 写法，具体可以阅读文档。  
 博主个人是习惯把需要多个容器的服务用 pod 来写。  
 
+支持的 Kubernetes kinds  
+- Pod
+- Deployment
+- PersistentVolumeClaim
+- ConfigMap
+- Secret
+- DaemonSet
+
 这里给一个 yaml example:  
 
 ```yaml
