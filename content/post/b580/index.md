@@ -81,9 +81,16 @@ SYCL 版本需要安装 intel oneapi，然后在构建时挂载进容器
 
 ### ollama
 
-ollama 官方没有给 SYCL 支持说明  
-但是它的后端是 llama.cpp, 改改就能运行了  
+ollama 官方没有给 SYCL 支持说明，但是它的后端是 llama.cpp, 改改就能运行了。  
+配合 [open-webui](https://github.com/open-webui/open-webui)，能建立知识库和联网搜索，还挺不错。   
 [Dockerfile](https://github.com/hypengw/dockerfiles/tree/main/ollama)
+
+- `OLLAMA_GPU_OVERHEAD`  
+  保留的不使用的显存(bytes)，一开始我还以为是最多能使用的显存，发现 ollama 怎么不使用 gpu，才发现是搞反了  
+  不知道出于什么原因，linux 这边没有有效手段获取 ARC GPU 可用的 vram，为了避免 oom，这个必须配置
+
+- `ollama ps`  
+  可以看到每个模型的运行情况
 
 TODO
 
