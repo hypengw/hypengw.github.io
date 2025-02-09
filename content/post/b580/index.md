@@ -1,5 +1,5 @@
 +++
-title = 'Intel B580 显卡使用体验'
+title = 'Intel B580 显卡 Linux 使用体验'
 date = 2025-01-07T00:44:03+08:00
 draft = false
 tags = ['硬件', 'Linux']
@@ -131,8 +131,15 @@ TODO
 
 ## 媒体
 
-需要 24.4.4 及以上的 [intel media-driver](https://github.com/intel/media-driver.git)。  
+需要 24.4.4 及以上的 [intel media-driver](https://github.com/intel/media-driver.git)  
 [media features 文档](https://github.com/intel/media-driver/blob/master/docs/media_features.md)，b580 是 BMG
+
+### Media Stack
+单纯编解码，大部分程序都是直接走 libva 的接口，只需要安装 media-driver 就可以了   
+oneVPL 是结合 GPGPU 和 VAAPI 来做 Video Processing  
+MeisaSdk 是旧显卡用的，在被 oneVPL 逐渐替代  
+
+![Media Stack](https://user-images.githubusercontent.com/34122804/167241733-4904858c-93c5-4e6b-bf2b-8a1b26f1e967.png)
 
 ### 解码
 
