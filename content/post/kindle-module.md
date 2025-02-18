@@ -6,8 +6,71 @@ tags = ['硬件','Linux']
 
 +++
 
-## KUAL
-TODO
+上个月刚好有新的越狱漏洞，于是趁着还没修复，把手里的 kpw5 越狱了。  
+众所周知，Kindle 中国已经关门大吉了，虽然我现在是美亚账号，但是也不排除以后 Amazon 限制个人文档服务的可能。  
+趁着闲下来的时间，了解了下 Kindle 越狱插件，看以后能不能自建同步服务。
+
+
+## [KUAL](https://www.mobileread.com/forums/showthread.php?t=203326)
+Kindle Unified Application Launcher  
+[source](https://bitbucket.org/ixtab/kindlelauncher/src/master/)  
+就像它的名字说的，是用来启动应用的。  
+
+![Kindle Neofetch](https://pan.bluempty.com/d/Public/Blog/kindle-module/kual.webp)
+ 
+### extension 插件/模块
+目录结构：  
+```text
+└── extensions
+    ├── ext_1
+    │   ├── config.xml
+    │   ├── menu.json
+    │   └── ...
+    └── ext_2
+        ├── config.xml
+        ├── menu.json
+        └── ...
+```
+相关 [README](https://bitbucket.org/ixtab/kindlelauncher/src/master/src/com/mobileread/ixtab/kindlelauncher/resources/aloop/README-dev.txt)  
+#### `config.xml`
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<extension>
+  <information>
+    <name>name</name>
+    <version>1.0</version>
+    <author>author</author>
+    <id>id</id>
+  </information>
+  <menus>
+    <menu type="json">menu.json</menu>
+  </menus>
+</extension>
+```
+
+#### `menu.json`
+```json
+{
+  "name": "Application 1 menu"
+  "items": [
+     {"name": "Application 1 menu, Item 1", "action": "act1.sh"},
+     {
+       "name": "Application 1 menu, Submenu 1",
+       "items": [
+         {"name": "Application 1 menu, Submenu 1, Item 1", "action": "act11.sh"},
+         {"name": "Application 1 menu, Submenu 1, Item 2", "action": "act12.sh"}
+       ]
+     }
+  ]
+}
+```
+
+### 越狱
+[2025 Kindle 越狱教程：不限 Kindle 型号，不限固件版本](https://bookfere.com/post/1145.html)
+
+### [Kindle Modding Wiki](https://kindlemodding.org/)
+This is the Kindle Modding wiki, an online resource which hopes to consolidate all Kindle Modding knowledge into a centralised resource.
+
 
 ## Kindle(kpw5) 系统环境
 ![Kindle Neofetch](https://pan.bluempty.com/d/Public/Blog/kindle-module/neofetch.webp)
@@ -38,7 +101,6 @@ tmpfs on /chroot/var/cache type tmpfs (rw,relatime,size=65536k)
 tmpfs on /chroot/var/lock type tmpfs (rw,relatime,size=65536k)
 tmpfs on /chroot/var/run type tmpfs (rw,relatime,size=65536k)
 tmpfs on /chroot/tmp/session_token type tmpfs (rw,relatime,size=65536k)
-tmpfs on /etc/shadow type tmpfs (ro,relatime,size=65536k)
 ```
 ```text
 [root@kindle 4.9.77-lab126]# lsmod
@@ -86,9 +148,6 @@ xwininfo: Window id: 0x51 (the root window) (has no name)
      "L:C_N:bottomBar_KIWI:com.lab126.KPPMainApp_AKB:true_S:-1_SHOWT1:50_ID:system_A:kppBottomChrome": ("KPPMainApp" "KPPMainApp")
 ```
 
-
-### 越狱
-[2025 Kindle 越狱教程：不限 Kindle 型号，不限固件版本](https://bookfere.com/post/1145.html)
 
 ### armv5 armv6 armv7 armhf 的区别
 Kindle 在 5.16.3 固件版本后，切换到了 armhf(hard float)，这直接影响到了 c abi，包括 ld 也变成了 `/lib/ld-linux-armhf.so.3`，无法和原来的 armel 程序兼容。  
