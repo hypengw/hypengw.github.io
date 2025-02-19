@@ -18,7 +18,7 @@ https://www.v2ex.com/t/1068160
 推测是 lineageos 被列入了黑名单
 
 - 铁路 12306  
-  ![12306](https://alist.bluempty.com/d/Public/Blog/lineageos-china/12306.webp?width=60)
+  ![12306](https://pan.bluempty.com/d/Public/Blog/lineageos-china/12306.webp?width=60)
 - 钉钉
 - 美团  
   请求异常拒绝操作
@@ -27,7 +27,7 @@ https://www.v2ex.com/t/1068160
 
 https://v2ex.com/t/1041752
 
-Android 14 qpr2 的[修改](https://github.com/crdroidandroid/android_art/commit/f6d02cf544f1bdb8cb0ae90603fbcc2b9f5b3c47)，导致包括国内大部分上了梆梆企业加固的 app 崩溃
+Android 14 qpr2 的[修改](https://github.com/crdroidandroid/android_art/commit/f6d02cf544f1bdb8cb0ae90603fbcc2b9f5b3c47)，导致国内大部分上了梆梆企业加固的 app 崩溃
 
 - 个税所得税
 - 交管12123

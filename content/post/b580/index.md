@@ -104,7 +104,7 @@ TODO
 - Iris + Sodium(默认配置)
 - BSL shader 8.4 High
 
-![mc](https://alist.bluempty.com/d/Public/Blog/b580/mc.webp)
+![mc](https://pan.bluempty.com/d/Public/Blog/b580/mc.webp)
 
 ### 赛博朋克 2077
 
@@ -116,7 +116,7 @@ TODO
 最低FPS: 56  
 最高FPS: 82
 
-![2077](https://alist.bluempty.com/d/Public/Blog/b580/2077.webp)
+![2077](https://pan.bluempty.com/d/Public/Blog/b580/2077.webp)
 
 ### 极限竞速地平线 4
 
@@ -127,7 +127,7 @@ TODO
 最低FPS: 119  
 最高FPS: 166
 
-![极限竞速地平线4](https://alist.bluempty.com/d/Public/Blog/b580/forza_horizon_4.webp)
+![极限竞速地平线4](https://pan.bluempty.com/d/Public/Blog/b580/forza_horizon_4.webp)
 
 ## 媒体
 
@@ -146,11 +146,11 @@ MeisaSdk 是旧显卡用的，在被 oneVPL 逐渐替代
 2160p 120fps hevc main10 [mmd](https://steamcommunity.com/sharedfiles/filedetails/?l=schinese&id=2156267111):  **5路**  
 av1 main 和 hevc rext 422 也是5路
 
-![初音 - 拼湊的斷音](https://alist.bluempty.com/d/Public/Blog/b580/decoder.webp)
+![初音 - 拼湊的斷音](https://pan.bluempty.com/d/Public/Blog/b580/decoder.webp)
 
 2160p(21:9) 120fps hevc main [mmd](https://www.bilibili.com/video/BV16m411Q7pa/): **4路**
 
-![世界第一的公主殿下](https://alist.bluempty.com/d/Public/Blog/b580/decoder_21_9.webp)
+![世界第一的公主殿下](https://pan.bluempty.com/d/Public/Blog/b580/decoder_21_9.webp)
 
 ### 编码
 
