@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Linux on Bluempty</title>
+    <link>https://blog.bluempty.com/tags/linux/</link>
+    <description>Recent content in Linux on Bluempty</description>
+    <generator>Hugo -- 0.135.0</generator>
+    <language>zh-hans</language>
+    <copyright>2025 Bluempty · CC BY-NC-SA 4.0</copyright>
+    <lastBuildDate>Mon, 17 Feb 2025 21:25:18 +0800</lastBuildDate>
+    <atom:link href="https://blog.bluempty.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kindle 也有自己的 Magisk 模块</title>
+      <link>https://blog.bluempty.com/post/kindle-module/</link>
+      <pubDate>Mon, 17 Feb 2025 21:25:18 +0800</pubDate>
+      <guid>https://blog.bluempty.com/post/kindle-module/</guid>
+      <description>&lt;p&gt;上个月刚好有新的越狱漏洞，于是趁着还没修复，把手里的 kpw5 越狱了。&lt;br&gt;
+众所周知，Kindle 中国已经关门大吉了，虽然我现在是美亚账号，但是也不排除以后 Amazon 限制个人文档服务的可能。&lt;br&gt;
+趁着闲下来的时间，了解了下 Kindle 越狱插件，看以后能不能自建同步服务。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>podman 使用体验</title>
+      <link>https://blog.bluempty.com/post/podman-systemd/</link>
+      <pubDate>Sun, 19 Jan 2025 10:43:33 +0800</pubDate>
+      <guid>https://blog.bluempty.com/post/podman-systemd/</guid>
+      <description>&lt;p&gt;日常经常需要使用容器，时常想要 docker 更轻量一些，比如不需要 daemon，不需要 root，普通用户就可以使用上。&lt;br&gt;
+然后被安利了 podman，使用了挺长时间了，以下是我的安利~&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Intel B580 显卡 Linux 使用体验</title>
+      <link>https://blog.bluempty.com/post/b580/</link>
+      <pubDate>Tue, 07 Jan 2025 00:44:03 +0800</pubDate>
+      <guid>https://blog.bluempty.com/post/b580/</guid>
+      <description>&lt;p&gt;想着需要给自己买张显卡了，原本打算等着核显继续迭代，但感觉还是太慢了。&lt;br&gt;
+我的要求不太高，能 1080p 60fps 全高画质玩大部分游戏，能跑一些 ai 应用就更好了。&lt;/p&gt;
+&lt;p&gt;原本打算 4060 的，但是显存有点小了，最近刚好 Intel 发了 B580，然后就决定是它了。&lt;br&gt;
+对 Intel 印象还是不错，虽然最近发展不太行，不过那也不影响，现有的相关设施已经够用了。&lt;br&gt;
+同时也一直打算试试 oneapi，我还挺看好 SYCL 的，就是不知道何时才能进 upstream llvm。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Flatpak 是包管理吗</title>
+      <link>https://blog.bluempty.com/post/is-flatpak-package-manager/</link>
+      <pubDate>Fri, 03 Jan 2025 21:25:18 +0800</pubDate>
+      <guid>https://blog.bluempty.com/post/is-flatpak-package-manager/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;阅读本篇文章需要有所了解：&lt;code&gt;Linux 发行版&lt;/code&gt;, &lt;code&gt;Linux 桌面环境(Desktop Envrionment)&lt;/code&gt;, &lt;code&gt;包管理(Package Manager)&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;博主第一次接触 Linux 是在高中，当时似乎是有个软件只有 Linux 版本，然后就参照着网上的文章试着安装 arch，具体的细节已经不太记得了。
+对当时的我来说，一堆不明所以的命令挺头疼的，一直害怕把电脑搞坏。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
