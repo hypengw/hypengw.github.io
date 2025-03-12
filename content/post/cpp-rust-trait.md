@@ -63,7 +63,7 @@ tags = ['编程']
 ```c++
 template<typename T>
 struct Speak {
-    auto speak() -> std::string { M::template call<0>(this); }
+    auto speak() -> std::string { return M::template call<0>(this); }
 
 private:
     using M = TraitMeta<MyTrait, T>;
