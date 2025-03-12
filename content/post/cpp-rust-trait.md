@@ -130,7 +130,7 @@ concept Implemented = (std::semiregular<Impl<T, A>> && ...);
 template<typename T>
     requires Implemented<T, Speak>
 void make_speak(T& animal) {
-    std::printf("{}", animal.speak());
+    std::print("{}", animal.speak());
 }
 ```
 
@@ -149,8 +149,16 @@ class Dyn : public Tr<DynImpl<Tr>> {
     ptr_t                          self;
     ...
 }
+// ...
+
+Dog dog;
+auto dyn = make_dyn<Dog>(dog);
+std::print("{}", dyn.speak());
 ```
 - `Tr`: 一个 `Trait` 接口
 - `Tr<DynImpl<Tr>>`： 即用 `DynImpl` 标签标记给 `Tr`，生成具体的调用函数
 - `apis`: `vtable` 指针
 - `Cn`: `Tr` 无法拥有 `const` 标记，所有需要额外的参数来标记 `ConstNess`
+
+### Box dyn
+TODO
