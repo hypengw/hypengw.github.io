@@ -66,7 +66,7 @@ struct Speak {
     auto speak() -> std::string { return M::template call<0>(this); }
 
 private:
-    using M = TraitMeta<MyTrait, T>;
+    using M = TraitMeta<Speak, T>;
     friend M;
     template<typename F>
     static consteval auto collect() {
