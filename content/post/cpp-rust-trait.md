@@ -76,14 +76,14 @@ private:
 ```
 - `template call<X>`: 查找 `vtable` 里的函数，然后调用。  
   对于 `vtable`，静态分发是引用 `constexpr static` 变量，动态分发是通过指针引用。  
-- `collect`: 在没有反射的情况下，帮助获取接口的类型和地址。由于是模板，所以也可以用于验证是否被正确实现。  
+- `collect`: 在没有反射的情况下，帮助获取接口的类型和地址。由于是模板，所以也可以用于验证接口是否被正确实现。  
 - `TraitApi`: 内部是一个简单 `tuple`，存储类型信息和地址。  
 
 ### 接口实现
 
 `c++` 里常见的 `Customization Points` 有 重载，模板特化，Policy 以及 ADL。  
 这里我们选择模板特化，`rust` 其实也是类似的实现。  
-比如，`Orphan Rule` 即对 `trait` 的孤儿原则：  
+比如，`Orphan Rule`，即对 `trait` 的孤儿原则：  
 - 为自己的类型实现外部 Trait
 - 为外部类型实现自己的 Trait
 
@@ -100,8 +100,8 @@ struct Impl<Speak, Dog> {
 
 struct Dog : Speak<Dog>  { std::string voice {"Woof!"}; };
 
-auto Impl<Speak, Point>::speak(TraitPtr self) -> std::string {
-    return self.as_ref<Point>().voice;
+auto Impl<Speak, Dog>::speak(TraitPtr self) -> std::string {
+    return self.as_ref<Dog>().voice;
 }
 ...
 ```
@@ -158,7 +158,7 @@ std::print("{}", dyn.speak());
 - `Tr`: 一个 `Trait` 接口
 - `Tr<DynImpl<Tr>>`： 即用 `DynImpl` 标签标记给 `Tr`，生成具体的调用函数
 - `apis`: `vtable` 指针
-- `Cn`: `Tr` 无法拥有 `const` 标记，所有需要额外的参数来标记 `ConstNess`
+- `Cn`: `Tr` 无法拥有 `const` 标记，所以需要额外的参数来标记 `ConstNess`
 
 ### Box dyn
 TODO
