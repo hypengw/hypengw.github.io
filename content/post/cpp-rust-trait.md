@@ -107,7 +107,7 @@ auto Impl<Speak, Dog>::speak(TraitPtr self) -> std::string {
 ```
 - `Impl` 接受一个 Trait 模板和具体类型。  
 - `: Speak<Dog>` 非虚继承，来让 `Dog` 类拥有具体的接口函数，即 `Dog().speak()`。  
-- `Impl<Speak, Dog>::reset(Dog())` 直接调用实现。  
+- `Impl<Speak, Dog>::speak(Dog())` 直接调用实现。  
 
 这里把 `Dog` 的 `fields` 分开定义会好一些。  
 这样可以在 `Dog` 还未定义的时候，直接操作 `Dog fileds`。
