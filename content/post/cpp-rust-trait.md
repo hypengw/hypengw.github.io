@@ -152,7 +152,7 @@ class Dyn : public Tr<DynImpl<Tr>> {
 // ...
 
 Dog dog;
-auto dyn = make_dyn<Dog>(dog);
+auto dyn = make_dyn<Speak>(dog);
 std::print("{}", dyn.speak());
 ```
 - `Tr`: 一个 `Trait` 接口
