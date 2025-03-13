@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>数学 on Bluempty</title>
+    <link>https://blog.bluempty.com/tags/%E6%95%B0%E5%AD%A6/</link>
+    <description>Recent content in 数学 on Bluempty</description>
+    <generator>Hugo -- 0.135.0</generator>
+    <language>zh-hans</language>
+    <copyright>2025 Bluempty · CC BY-NC-SA 4.0</copyright>
+    <lastBuildDate>Sun, 02 Feb 2025 23:06:46 +0800</lastBuildDate>
+    <atom:link href="https://blog.bluempty.com/tags/%E6%95%B0%E5%AD%A6/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>信号与向量</title>
+      <link>https://blog.bluempty.com/post/signal-and-vector/</link>
+      <pubDate>Sun, 02 Feb 2025 23:06:46 +0800</pubDate>
+      <guid>https://blog.bluempty.com/post/signal-and-vector/</guid>
+      <description>&lt;p&gt;最近在看信号处理相关的书，看着看着，发现怎么看怎么像线性代数，于是记录下我能想到的对比。&lt;br&gt;
+不得不说，这种可以把知识连成网的体验真不错，学起来事半功倍。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
