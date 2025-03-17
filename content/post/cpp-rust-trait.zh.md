@@ -52,6 +52,7 @@ tags = ['编程']
 ## C++ 实现
 
 [完整的代码](https://github.com/hypengw/rstd/blob/master/src/core/trait.cppm)  
+具体的实现可能会改变，参考 repo 里的文档
 
 ### 接口定义
 
