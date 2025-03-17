@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Coding on Bluempty</title>
+    <link>https://blog.bluempty.com/en/tags/coding/</link>
+    <description>Recent content in Coding on Bluempty</description>
+    <generator>Hugo -- 0.135.0</generator>
+    <language>en-us</language>
+    <copyright>2025 Bluempty · CC BY-NC-SA 4.0</copyright>
+    <lastBuildDate>Wed, 12 Mar 2025 22:11:24 +0800</lastBuildDate>
+    <atom:link href="https://blog.bluempty.com/en/tags/coding/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Simulating Rust Trait in C&#43;&#43;</title>
+      <link>https://blog.bluempty.com/en/post/cpp-rust-trait/</link>
+      <pubDate>Wed, 12 Mar 2025 22:11:24 +0800</pubDate>
+      <guid>https://blog.bluempty.com/en/post/cpp-rust-trait/</guid>
+      <description>&lt;p&gt;I got in touch with &lt;code&gt;rust&lt;/code&gt; quite early and watched its ecosystem gradually improve.&lt;br&gt;
+When I first used &lt;code&gt;trait&lt;/code&gt;, I wondered how to implement such a great feature in &lt;code&gt;c++&lt;/code&gt;.&lt;br&gt;
+Though it wasn&amp;rsquo;t an urgent need, I put it aside. Recently, I tried to implement it in a simple way.&lt;/p&gt;
+&lt;h2 id=&#34;rust-trait&#34;&gt;Rust Trait&lt;/h2&gt;
+&lt;p&gt;Let&amp;rsquo;s first look at an example of rust trait.&lt;br&gt;
+Simply put, it&amp;rsquo;s about &lt;em&gt;defining interfaces, implementing interfaces, and interface polymorphism&lt;/em&gt;.&lt;br&gt;
+Actually, &lt;code&gt;c++&lt;/code&gt; already has a complete inheritance paradigm to implement these requirements - &lt;em&gt;virtual interface, inheritance implementation, virtual polymorphism&lt;/em&gt;.&lt;br&gt;
+However, virtual functions require forced dynamic dispatch and add virtual table pointers to class instances.&lt;br&gt;
+So let&amp;rsquo;s try to implement &lt;code&gt;trait&lt;/code&gt; without using virtual inheritance.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

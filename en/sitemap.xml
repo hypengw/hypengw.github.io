@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://blog.bluempty.com/en/</loc>
+    <lastmod>2025-03-12T22:11:24+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-hans"
+                href="https://blog.bluempty.com/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://blog.bluempty.com/en/"
+                />
+  </url>
+    
+  <url>
+    <loc>https://blog.bluempty.com/en/post/</loc>
+    <lastmod>2025-03-12T22:11:24+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-hans"
+                href="https://blog.bluempty.com/post/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://blog.bluempty.com/en/post/"
+                />
+  </url>
+    
+  <url>
+    <loc>https://blog.bluempty.com/en/post/cpp-rust-trait/</loc>
+    <lastmod>2025-03-12T22:11:24+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-hans"
+                href="https://blog.bluempty.com/post/cpp-rust-trait/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://blog.bluempty.com/en/post/cpp-rust-trait/"
+                />
+  </url>
+    
+</urlset>

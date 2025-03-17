@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://blog.bluempty.com/</loc>
+    <lastmod>2025-03-12T22:11:24+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://blog.bluempty.com/en/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-hans"
+                href="https://blog.bluempty.com/"
+                />
+  </url>
+    
+  <url>
+    <loc>https://blog.bluempty.com/post/cpp-rust-trait/</loc>
+    <lastmod>2025-03-12T22:11:24+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://blog.bluempty.com/en/post/cpp-rust-trait/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-hans"
+                href="https://blog.bluempty.com/post/cpp-rust-trait/"
+                />
+  </url>
+    
+  <url>
+    <loc>https://blog.bluempty.com/post/</loc>
+    <lastmod>2025-03-12T22:11:24+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://blog.bluempty.com/en/post/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-hans"
+                href="https://blog.bluempty.com/post/"
+                />
+  </url>
+    
+  <url>
+    <loc>https://blog.bluempty.com/post/kindle-module/</loc>
+    <lastmod>2025-02-17T21:25:18+08:00</lastmod>
+  </url>
+    
+  <url>
+    <loc>https://blog.bluempty.com/post/signal-and-vector/</loc>
+    <lastmod>2025-02-02T23:06:46+08:00</lastmod>
+  </url>
+    
+  <url>
+    <loc>https://blog.bluempty.com/post/finding-serenity/</loc>
+    <lastmod>2025-01-23T11:53:24+08:00</lastmod>
+  </url>
+    
+  <url>
+    <loc>https://blog.bluempty.com/post/podman-systemd/</loc>
+    <lastmod>2025-01-19T10:43:33+08:00</lastmod>
+  </url>
+    
+  <url>
+    <loc>https://blog.bluempty.com/post/xiaomi-eu-kernel-su-mount/</loc>
+    <lastmod>2025-01-18T12:55:59+08:00</lastmod>
+  </url>
+    
+  <url>
+    <loc>https://blog.bluempty.com/post/lineageos-china/</loc>
+    <lastmod>2025-01-09T14:15:27+08:00</lastmod>
+  </url>
+    
+  <url>
+    <loc>https://blog.bluempty.com/post/b580/</loc>
+    <lastmod>2025-01-07T00:44:03+08:00</lastmod>
+  </url>
+    
+  <url>
+    <loc>https://blog.bluempty.com/post/is-flatpak-package-manager/</loc>
+    <lastmod>2025-01-03T21:25:18+08:00</lastmod>
+  </url>
+    
+</urlset>

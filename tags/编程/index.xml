@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>编程 on Bluempty</title>
+    <link>https://blog.bluempty.com/tags/%E7%BC%96%E7%A8%8B/</link>
+    <description>Recent content in 编程 on Bluempty</description>
+    <generator>Hugo -- 0.135.0</generator>
+    <language>zh-hans</language>
+    <copyright>2025 Bluempty · CC BY-NC-SA 4.0</copyright>
+    <lastBuildDate>Wed, 12 Mar 2025 22:11:24 +0800</lastBuildDate>
+    <atom:link href="https://blog.bluempty.com/tags/%E7%BC%96%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>C&#43;&#43; 模拟 Rust Trait</title>
+      <link>https://blog.bluempty.com/post/cpp-rust-trait/</link>
+      <pubDate>Wed, 12 Mar 2025 22:11:24 +0800</pubDate>
+      <guid>https://blog.bluempty.com/post/cpp-rust-trait/</guid>
+      <description>&lt;p&gt;接触 &lt;code&gt;rust&lt;/code&gt; 倒是挺早了，看着它的生态慢慢好起来。&lt;br&gt;
+第一次用上 &lt;code&gt;trait&lt;/code&gt; 就在想，这么好的东西，该怎么在 &lt;code&gt;c++&lt;/code&gt; 里用上呢。&lt;br&gt;
+不过不算刚需，就一直搁置着，最近尝试简单实现了一下。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

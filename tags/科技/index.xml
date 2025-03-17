@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>科技 on Bluempty</title>
+    <link>https://blog.bluempty.com/tags/%E7%A7%91%E6%8A%80/</link>
+    <description>Recent content in 科技 on Bluempty</description>
+    <generator>Hugo -- 0.135.0</generator>
+    <language>zh-hans</language>
+    <copyright>2025 Bluempty · CC BY-NC-SA 4.0</copyright>
+    <lastBuildDate>Sun, 19 Jan 2025 10:43:33 +0800</lastBuildDate>
+    <atom:link href="https://blog.bluempty.com/tags/%E7%A7%91%E6%8A%80/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>podman 使用体验</title>
+      <link>https://blog.bluempty.com/post/podman-systemd/</link>
+      <pubDate>Sun, 19 Jan 2025 10:43:33 +0800</pubDate>
+      <guid>https://blog.bluempty.com/post/podman-systemd/</guid>
+      <description>&lt;p&gt;日常经常需要使用容器，时常想要 docker 更轻量一些，比如不需要 daemon，不需要 root，普通用户就可以使用上。&lt;br&gt;
+然后被安利了 podman，使用了挺长时间了，以下是我的安利~&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HyperOS.eu KernelSU 卸载模块不工作</title>
+      <link>https://blog.bluempty.com/post/xiaomi-eu-kernel-su-mount/</link>
+      <pubDate>Sat, 18 Jan 2025 12:55:59 +0800</pubDate>
+      <guid>https://blog.bluempty.com/post/xiaomi-eu-kernel-su-mount/</guid>
+      <description>&lt;p&gt;给小米 13 解锁刷了 EU 版本并给了 KernelSU LKM，但是 momo 一直检测到 magisk 模块。&lt;/p&gt;
+&lt;p&gt;Debug 了一下下。&lt;/p&gt;
+&lt;h3 id=&#34;kernelsu-卸载模块实现&#34;&gt;KernelSU 卸载模块实现&lt;/h3&gt;
+&lt;p&gt;kernel 内部使用 &lt;a href=&#34;https://elixir.bootlin.com/linux/v5.15.31/C/ident/path_umount&#34;&gt;path_umount&lt;/a&gt; 单独给某个 app 卸载模块 overlay 挂载点&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;# https:&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//github.com/tiann/KernelSU/blob/v1.0.2/kernel/core_hook.c#L451
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;static&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;ksu_umount_mnt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;path&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;path&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;flags&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;err&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;path_umount&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;path&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;flags&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;err&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;		&lt;span class=&#34;nf&#34;&gt;pr_info&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;umount %s failed: %d&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\n&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;path&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;dentry&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;d_iname&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;err&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;static&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;try_umount&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;char&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;mnt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;bool&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;check_mnt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;flags&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	&lt;span class=&#34;k&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;path&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;path&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;err&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;kern_path&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;mnt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;path&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	&lt;span class=&#34;nf&#34;&gt;ksu_umount_mnt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;path&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;flags&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;ksu_handle_setuid&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;cred&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;new&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;cred&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;old&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	&lt;span class=&#34;p&#34;&gt;...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	&lt;span class=&#34;nf&#34;&gt;try_umount&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;/system&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	&lt;span class=&#34;nf&#34;&gt;try_umount&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;/vendor&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	&lt;span class=&#34;nf&#34;&gt;try_umount&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;/product&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	&lt;span class=&#34;nf&#34;&gt;try_umount&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;/data/adb/modules&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;false&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;MNT_DETACH&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	&lt;span class=&#34;p&#34;&gt;...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;hyperos-会使用-overlay-挂载-mi_ext&#34;&gt;HyperOS 会使用 overlay 挂载 mi_ext&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;mi_ext&lt;/code&gt; 分区是小米用来添加一些额外 app 和 配置文件的&lt;br&gt;
+&lt;code&gt;eu&lt;/code&gt; 版本这个分区除了 &lt;code&gt;etc&lt;/code&gt;，其他都是空文件夹&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>国内使用 Lineageos 的问题</title>
+      <link>https://blog.bluempty.com/post/lineageos-china/</link>
+      <pubDate>Thu, 09 Jan 2025 14:15:27 +0800</pubDate>
+      <guid>https://blog.bluempty.com/post/lineageos-china/</guid>
+      <description>&lt;p&gt;博主有一台 Pixel 5&lt;br&gt;
+尝试用 Lineageos 作为主力机后放弃，以下是面临的一些问题&lt;/p&gt;
+&lt;h2 id=&#34;无法人脸认证&#34;&gt;无法人脸认证&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://x.com/abaabaMoGu/status/1759564528424284524?lang=ar&#34;&gt;https://x.com/abaabaMoGu/status/1759564528424284524?lang=ar&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.v2ex.com/t/1068160&#34;&gt;https://www.v2ex.com/t/1068160&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;推测是 lineageos 被列入了黑名单&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;铁路 12306&lt;br&gt;
+&lt;a href=&#34;https://pan.bluempty.com/d/Public/Blog/lineageos-china/12306.webp?width=60&#34; data-dimbox data-dimbox-caption=&#34;12306&#34;&gt;
+&lt;img alt=&#34;12306&#34; height=&#34;%&#34; loading=&#34;lazy&#34; src=&#34;https://pan.bluempty.com/d/Public/Blog/lineageos-china/12306.webp?width=60&#34; width=&#34;60%&#34;&gt;
+&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;钉钉&lt;/li&gt;
+&lt;li&gt;美团&lt;br&gt;
+请求异常拒绝操作&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;政府银行类-app-闪退&#34;&gt;政府/银行类 app 闪退&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://v2ex.com/t/1041752&#34;&gt;https://v2ex.com/t/1041752&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Android 14 qpr2 的&lt;a href=&#34;https://github.com/crdroidandroid/android_art/commit/f6d02cf544f1bdb8cb0ae90603fbcc2b9f5b3c47&#34;&gt;修改&lt;/a&gt;，导致国内大部分上了梆梆企业加固的 app 崩溃&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Flatpak 是包管理吗</title>
+      <link>https://blog.bluempty.com/post/is-flatpak-package-manager/</link>
+      <pubDate>Fri, 03 Jan 2025 21:25:18 +0800</pubDate>
+      <guid>https://blog.bluempty.com/post/is-flatpak-package-manager/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;阅读本篇文章需要有所了解：&lt;code&gt;Linux 发行版&lt;/code&gt;, &lt;code&gt;Linux 桌面环境(Desktop Envrionment)&lt;/code&gt;, &lt;code&gt;包管理(Package Manager)&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;博主第一次接触 Linux 是在高中，当时似乎是有个软件只有 Linux 版本，然后就参照着网上的文章试着安装 arch，具体的细节已经不太记得了。
+对当时的我来说，一堆不明所以的命令挺头疼的，一直害怕把电脑搞坏。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

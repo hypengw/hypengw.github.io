@@ -1,0 +1,12 @@
+User-agent: *
+Disallow: /about/
+Disallow: /tags/
+Disallow: /categories/
+Disallow: /friends/
+Disallow: /search/
+Disallow: /en/about/
+Disallow: /en/tags/
+Disallow: /en/friends/
+Disallow: /en/categories/
+Disallow: /en/search/
+Sitemap: https://blog.bluempty.com/sitemap.xml
