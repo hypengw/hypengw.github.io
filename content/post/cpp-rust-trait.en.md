@@ -1,5 +1,5 @@
 +++
-title = 'Simulating Rust Traits in C++'
+title = 'Simulating Rust Trait in C++'
 date = 2025-03-12T22:11:24+08:00
 draft = false
 tags = ['Coding']
@@ -10,7 +10,7 @@ When I first used `trait`, I wondered how to implement such a great feature in `
 Though it wasn't an urgent need, I put it aside. Recently, I tried to implement it in a simple way.
 
 ## Rust Trait
-Let's first look at an example of rust traits.  
+Let's first look at an example of rust trait.  
 Simply put, it's about *defining interfaces, implementing interfaces, and interface polymorphism*.  
 Actually, `c++` already has a complete inheritance paradigm to implement these requirements - *virtual interface, inheritance implementation, virtual polymorphism*.  
 However, virtual functions require forced dynamic dispatch and add virtual table pointers to class instances.  
@@ -84,8 +84,8 @@ private:
 Common `Customization Points` in `c++` include overloading, template specialization, Policy, and ADL.  
 Here we choose template specialization, which is similar to how `rust` implements it.  
 For example, the `Orphan Rule`, which is the orphan principle for `trait`:  
-- Implement external Traits for your own types  
-- Implement your own Traits for external types
+- Implement external Trait for your own types  
+- Implement your own Trait for external types
 
 From the perspective of `c++`, it's easy to understand that these two rules ensure that the implementation of the Trait (i.e., template specialization) is visible to the compilation unit that references it (i.e., the `.cpp/.cc` that references the `.h`).  
 This avoids generating different implementations in different compilation units.  
